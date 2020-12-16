@@ -10,3 +10,12 @@ resource "okta_user" "example" {
   first_name = "terraform"
   last_name = "example"
 }
+
+terraform {
+  required_providers {
+    okta = {
+      source = "oktadeveloper/okta"
+      version = "3.7.0"
+    }
+  }
+}
