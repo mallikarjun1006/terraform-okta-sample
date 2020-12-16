@@ -2,7 +2,7 @@ resource "okta_auth_server" "example" {
   audiences   = ["api://example"]
   description = "My Example Auth Server"
   name        = "example"
-  issuer_mode = "CUSTOM_URL"
+  issuer_mode = "ORG_URL"
   status      = "ACTIVE"
 }
 resource "okta_auth_server_claim" "example" {
