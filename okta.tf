@@ -19,7 +19,9 @@ resource "okta_auth_server_policy" "example" {
   priority         = 1
   client_whitelist = ["ALL_CLIENTS"]
 }
-
+data "okta_group" "example" {
+  name = "EVERYONE"
+}
 resource "okta_auth_server_policy_rule" "example" {
   auth_server_id       = okta_auth_server.example.id
   policy_id            = okta_auth_server_policy.example.id
@@ -27,6 +29,7 @@ resource "okta_auth_server_policy_rule" "example" {
   name                 = "example"
   priority             = 1  
   grant_type_whitelist = ["implicit"]
+  group_whitelist      = [okta_group.example]
   scope_whitelist = ["*"]
 }
 resource "okta_auth_server_scope" "example" {
