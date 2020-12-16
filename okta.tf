@@ -27,7 +27,7 @@ resource "okta_auth_server_policy_rule" "example" {
   name                 = "example"
   priority             = 1  
   grant_type_whitelist = ["implicit"]
-  scope_whitelist = "ALL_SCOPES"
+  scope_whitelist = ["*"]
 }
 resource "okta_auth_server_scope" "example" {
   auth_server_id   = okta_auth_server.example.id
