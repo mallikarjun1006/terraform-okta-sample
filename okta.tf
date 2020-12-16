@@ -1,3 +1,7 @@
+data "okta_group" "example" {
+  name = "EVERYONE"
+}
+
 resource "okta_auth_server" "example" {
   audiences   = ["api://example"]
   description = "My Example Auth Server"
@@ -19,9 +23,7 @@ resource "okta_auth_server_policy" "example" {
   priority         = 1
   client_whitelist = ["ALL_CLIENTS"]
 }
-data "okta_group" "example" {
-  name = "EVERYONE"
-}
+
 resource "okta_auth_server_policy_rule" "example" {
   auth_server_id       = okta_auth_server.example.id
   policy_id            = okta_auth_server_policy.example.id
