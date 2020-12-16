@@ -5,6 +5,13 @@ resource "okta_user" "example" {
   last_name = "example"
 }
 
+resource "okta_user" "example1" {  
+  email ="terreform@example1.com"
+  login = "terreform@example1.com"
+  first_name = "terraform1"
+  last_name = "example1"
+}
+
 terraform {
   required_providers {
     okta = {
