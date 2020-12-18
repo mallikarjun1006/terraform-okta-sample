@@ -62,7 +62,33 @@ resource "okta_app_saml" "example" {
         "GROUP_PUSH",
         "IMPORT_USER_SCHEMA",
         "IMPORT_NEW_USERS"
-    ] 
+    ]
+ app_settings_json= <<JSON
+ {
+            "app": {
+                "acsUrl": "https://dev-636187.oktapreview.com/sso/saml2/0oapekuub6qMr79Y90h7",
+                "audRestriction": "https://www.okta.com/saml2/service-provider/sphxeudubnoxeccoadyu",
+                "baseUrl": "https://dev-636187.oktapreview.com"
+            },
+            "notifications": {
+                "vpn": {
+                    "network": {
+                        "connection": "DISABLED"
+                    },
+                    "message": null,
+                    "helpUrl": null
+                }
+            },
+            "signOn": {
+                "defaultRelayState": null,
+                "ssoAcsUrlOverride": null,
+                "audienceOverride": null,
+                "recipientOverride": null,
+                "destinationOverride": null,
+                "attributeStatements": []
+            }
+}
+JSON	
 }
 terraform {
   required_providers {
