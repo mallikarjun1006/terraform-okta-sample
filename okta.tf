@@ -55,7 +55,14 @@ resource "okta_app_saml" "example" {
   honor_force_authn        = false
   authn_context_class_ref  = "urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport"
   preconfigured_app        = "okta_org2org"
-  auto_submit_toolbar      = true
+  auto_submit_toolbar      = false
+  features = [
+        "IMPORT_PROFILE_UPDATES",
+        "PUSH_NEW_USERS",
+        "GROUP_PUSH",
+        "IMPORT_USER_SCHEMA",
+        "IMPORT_NEW_USERS"
+    ]
   app_settings_json        = {}
   attribute_statements {
     type         = "GROUP"
