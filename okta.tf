@@ -62,13 +62,7 @@ resource "okta_app_saml" "example" {
         "GROUP_PUSH",
         "IMPORT_USER_SCHEMA",
         "IMPORT_NEW_USERS"
-    ]
-  attribute_statements {
-    type         = "GROUP"
-    name         = "groups"
-    filter_type  = "REGEX"
-    filter_value = ".*"
-  }
+    ] 
 }
 terraform {
   required_providers {
