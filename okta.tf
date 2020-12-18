@@ -63,7 +63,6 @@ resource "okta_app_saml" "example" {
         "IMPORT_USER_SCHEMA",
         "IMPORT_NEW_USERS"
     ]
-  app_settings_json        = {}
   attribute_statements {
     type         = "GROUP"
     name         = "groups"
