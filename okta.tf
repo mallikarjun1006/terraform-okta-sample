@@ -41,7 +41,7 @@ resource "okta_auth_server_scope" "example" {
   consent          = "IMPLICIT"
 }
 
-resource "okta_app_saml" "example" {
+resource "okta_app_saml" "example1" {
   label                    = "example"
   sso_url                  = "http://example.com"
   recipient                = "http://example.com"
